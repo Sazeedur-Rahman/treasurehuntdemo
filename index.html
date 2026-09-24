@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport-fit=cover lets the page use the full iPhone screen (notch safe areas handled in CSS) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#060913">
+
+  <!-- CHANGE THE CLUB / EVENT NAME HERE (and in the <h1> below) -->
+  <title>AEC Treasure Hunt</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating glowing particles are created by script.js -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <main class="card">
+
+    <!-- CHANGE THE CLUB / EVENT NAME HERE -->
+    <h1 class="title">EDC Treasure Hunt</h1>
+
+    <!-- ===== STAGE 1: fake loading sequence ===== -->
+    <section class="stage" id="loadingStage" aria-live="polite">
+      <div class="status-block" id="statusBlock" data-tone="working">
+        <div class="status-icon" id="statusIcon">📱</div>
+        <p class="status-text" id="statusText">Verifying QR Code...</p>
+      </div>
+
+      <!-- Scrambled "cipher" text, only visible while "decrypting" -->
+      <p class="cipher" id="cipher" hidden></p>
+
+      <!-- Progress bar (filled by script.js) -->
+      <div class="progress" id="progress" hidden>
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-label" id="progressLabel" hidden>0%</p>
+    </section>
+
+    <!-- ===== STAGE 2: the joke reveal ===== -->
+    <section class="stage" id="revealStage" hidden>
+      <div class="big-emoji" aria-hidden="true">😂</div>
+      <h2 class="reveal-heading">Oops!</h2>
+
+      <!-- --i controls the stagger delay of each line -->
+      <p class="reveal-line" style="--i:1">Looks like someone got trolled </p>
+      <p class="reveal-line muted" style="--i:2">Unfortunately...</p>
+      <p class="reveal-line gold" style="--i:6">Good luck... you'll need it. 🍀</p>
+
+      <button class="retry-btn" id="retryBtn" type="button" style="--i:7">Retry</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
